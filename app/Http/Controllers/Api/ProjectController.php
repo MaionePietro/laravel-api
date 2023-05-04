@@ -11,11 +11,16 @@ class ProjectController extends Controller
 
     public function index(){
 
-        $project = Project::all();
+        $project = Project::all(); //with('type')
         return response()->json([
-            
-            'project'=>$project
-
+            'success'=>true,
+            'project'=>$project,
+        ]);
+    }
+    public function show(slug){
+        return response()->json([
+            'success'=>true,
+            'project'=>$project,
         ]);
     }
 }
